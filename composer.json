@@ -1,0 +1,27 @@
+{
+    "name": "halloverden/symfony-http-exceptions-bundle",
+    "description": "Bundle for halloverden/symfony-http-exceptions",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Roar Furunes",
+            "email": "tom.roar@halloverden.no"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php":"^7.2",
+        "symfony/http-kernel": "^4.4|^5.0",
+        "symfony/dependency-injection": "^4.4|^5.0",
+        "halloverden/symfony-http-exceptions": "^0.2.0",
+        "ext-json": "*",
+        "symfony/config": "^4.4|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HalloVerden\\HttpExceptionsBundle\\": ""
+        }
+    }
+}
