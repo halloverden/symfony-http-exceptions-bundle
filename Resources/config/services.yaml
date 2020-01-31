@@ -1,0 +1,21 @@
+services:
+  HalloVerden\HttpExceptionsBundle\Interfaces\Services\ExceptionConverterServiceInterface:
+    class: HalloVerden\HttpExceptionsBundle\Services\ExceptionConverterService
+
+  HalloVerden\HttpExceptionsBundle\Interfaces\Services\ExceptionLogServiceInterface:
+    class: HalloVerden\HttpExceptionsBundle\Services\ExceptionLogService
+    calls:
+      - ['setLogger', ['@?logger']]
+
+  HalloVerden\HttpExceptionsBundle\Interfaces\Services\ExceptionResponseServiceInterface:
+    class: HalloVerden\HttpExceptionsBundle\Services\ExceptionResponseService
+    arguments:
+      $debug: '%kernel.debug%'
+
+  HalloVerden\HttpExceptionsBundle\EventListener\ExceptionListener:
+    tags:
+      - {name: 'kernel.event_subscriber'}
+    arguments:
+      $exceptionConverterService: '@HalloVerden\HttpExceptionsBundle\Interfaces\Services\ExceptionConverterServiceInterface'
+      $logExceptionService: '@HalloVerden\HttpExceptionsBundle\Interfaces\Services\ExceptionLogServiceInterface'
+      $exceptionResponseService: '@HalloVerden\HttpExceptionsBundle\Interfaces\Services\ExceptionResponseServiceInterface'
