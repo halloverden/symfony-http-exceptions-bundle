@@ -12,6 +12,9 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 class ExceptionLogService implements ExceptionLogServiceInterface {
   use LoggerAwareTrait;
 
+  const MESSAGE_ERROR = 'InternalServerError';
+  const MESSAGE_INFO = 'Exception was thrown';
+
   /**
    * @param HttpExceptionInterface $exception
    */
@@ -22,9 +25,9 @@ class ExceptionLogService implements ExceptionLogServiceInterface {
 
     $context = FlattenExceptionHelper::createFromThrowable($exception)->toArray();
     if ($exception->getStatusCode() >= 500) {
-      $this->logger->error("InternalServerError", $context);
+      $this->logger->error(self::MESSAGE_ERROR, $context);
     } else {
-      $this->logger->info("Exception was thrown", $context);
+      $this->logger->info(self::MESSAGE_INFO, $context);
     }
   }
 
