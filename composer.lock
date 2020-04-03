@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "halloverden/symfony-http-exceptions",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/halloverden/symfony-http-exceptions.git",
-                "reference": "ccb91b96e0d52e442970fedd5ae5cec5b084a88b"
+                "reference": "7814ce414a6adc28c049476a05db26b797b3883a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/halloverden/symfony-http-exceptions/zipball/ccb91b96e0d52e442970fedd5ae5cec5b084a88b",
-                "reference": "ccb91b96e0d52e442970fedd5ae5cec5b084a88b",
+                "url": "https://api.github.com/repos/halloverden/symfony-http-exceptions/zipball/7814ce414a6adc28c049476a05db26b797b3883a",
+                "reference": "7814ce414a6adc28c049476a05db26b797b3883a",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 }
             ],
             "description": "Symfony HTTP Expcetions",
-            "time": "2020-03-31T14:12:46+00:00"
+            "time": "2020-04-03T15:34:43+00:00"
         },
         {
             "name": "psr/container",
