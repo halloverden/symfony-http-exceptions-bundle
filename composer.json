@@ -15,7 +15,7 @@
         "php":"^7.2",
         "symfony/http-kernel": "^4.4.7|^5.0.7",
         "symfony/dependency-injection": "^4.4.7|^5.0.7",
-        "halloverden/symfony-http-exceptions": "^0.3.1",
+        "halloverden/symfony-http-exceptions": "^0.4.0",
         "ext-json": "*",
         "symfony/config": "^4.4.7|^5.0.7"
     },
