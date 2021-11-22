@@ -19,7 +19,7 @@ class Configuration implements ConfigurationInterface {
     $treeBuilder = new TreeBuilder('hallo_verden_http_exceptions');
 
     $treeBuilder->getRootNode()
-      ->addDefaultChildrenIfNoneSet()
+      ->addDefaultsIfNotSet()
       ->children()
         ->arrayNode('exception_log')
           ->children()
