@@ -23,9 +23,7 @@ class HalloVerdenHttpExceptionsExtension extends ConfigurableExtension {
 
     $exceptionLog = $container->getDefinition(ExceptionLogServiceInterface::class);
     if ($exceptionLog->getClass() === ExceptionLogService::class) {
-      $exceptionLog->addArgument([
-        '$useFlattenException' => $mergedConfig['exception_log']['use_flatten_exception']
-      ]);
+      $exceptionLog->setArgument('$useFlattenException', $mergedConfig['exception_log']['use_flatten_exception']);
     }
   }
 }
