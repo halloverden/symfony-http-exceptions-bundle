@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface {
       ->children()
         ->arrayNode('exception_log')
           ->children()
-            ->booleanNode('use_flatten_exception')->end()
+            ->booleanNode('use_flatten_exception')->defaultTrue()->end()
           ->end()
         ->end()
       ->end();
