@@ -1,0 +1,3 @@
+hallo_verden_http_exceptions:
+  exception_log:
+    use_flatten_exception: true
