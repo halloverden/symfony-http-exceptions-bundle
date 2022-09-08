@@ -19,7 +19,7 @@
         "php":">=8.1",
         "symfony/http-kernel": "^5.4|^6.1",
         "symfony/dependency-injection": "^5.4|^6.1",
-        "halloverden/symfony-http-exceptions": "dev-feature/allow-symfony-6 as 1.2.0",
+        "halloverden/symfony-http-exceptions": "^1.0|^2.0",
         "ext-json": "*",
         "symfony/config": "^5.4|^6.1"
     },
