@@ -34,9 +34,8 @@ class ExceptionResponseService implements ExceptionResponseServiceInterface {
    */
   public function createResponseFromHttpException(HttpExceptionInterface $exception): Response {
     // Note: Encoding options needs to be set before data
-    return JsonResponse::create(null, $exception->getStatusCode(), $exception->getHeaders())
-      ->setEncodingOptions(JsonResponse::DEFAULT_ENCODING_OPTIONS | JSON_INVALID_UTF8_IGNORE)
-      ->setData($this->getData($exception));
+    return (new JsonResponse($this->getData($exception), $exception->getStatusCode(), $exception->getHeaders()))
+      ->setEncodingOptions(JsonResponse::DEFAULT_ENCODING_OPTIONS | JSON_INVALID_UTF8_IGNORE);
   }
 
   /**
