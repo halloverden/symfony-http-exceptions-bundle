@@ -16,14 +16,14 @@ use Symfony\Component\ErrorHandler\Exception\FlattenException;
 class FlattenExceptionHelper extends FlattenException {
 
   /**
-   * @var array<int, FlattenException>
+   * @var array<int, FlattenExceptionHelper>
    */
-  private static $exceptions = [];
+  private static array $exceptions = [];
 
   /**
    * @inheritDoc
    */
-  public static function createFromThrowable(\Throwable $exception, int $statusCode = null, array $headers = []): FlattenException {
+  public static function createFromThrowable(\Throwable $exception, int $statusCode = null, array $headers = []): static {
     $id = \spl_object_id($exception);
 
     if (isset(static::$exceptions[$id])) {

@@ -14,33 +14,13 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class ExceptionListener implements EventSubscriberInterface {
 
   /**
-   * @var ExceptionConverterServiceInterface
-   */
-  private $exceptionConverterService;
-
-  /**
-   * @var ExceptionLogServiceInterface
-   */
-  private $logExceptionService;
-
-  /**
-   * @var ExceptionResponseServiceInterface
-   */
-  private $exceptionResponseService;
-
-  /**
    * ExceptionListener constructor.
-   *
-   * @param ExceptionConverterServiceInterface $exceptionConverterService
-   * @param ExceptionLogServiceInterface       $logExceptionService
-   * @param ExceptionResponseServiceInterface  $exceptionResponseService
    */
-  public function __construct(ExceptionConverterServiceInterface $exceptionConverterService,
-                              ExceptionLogServiceInterface $logExceptionService,
-                              ExceptionResponseServiceInterface $exceptionResponseService) {
-    $this->exceptionConverterService = $exceptionConverterService;
-    $this->logExceptionService = $logExceptionService;
-    $this->exceptionResponseService = $exceptionResponseService;
+  public function __construct(
+    private readonly ExceptionConverterServiceInterface $exceptionConverterService,
+    private readonly ExceptionLogServiceInterface $logExceptionService,
+    private readonly ExceptionResponseServiceInterface $exceptionResponseService
+  ) {
   }
 
   /**
@@ -82,7 +62,7 @@ class ExceptionListener implements EventSubscriberInterface {
   /**
    * @inheritDoc
    */
-  public static function getSubscribedEvents() {
+  public static function getSubscribedEvents(): array {
     return array(
       KernelEvents::EXCEPTION => [
         ['convertKernelException', -1],
