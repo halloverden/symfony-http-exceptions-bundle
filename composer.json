@@ -1,31 +1,31 @@
 {
-    "name": "halloverden/symfony-http-exceptions-bundle",
-    "description": "Bundle for halloverden/symfony-http-exceptions",
-    "type": "symfony-bundle",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Tom Roar Furunes",
-            "email": "tom.roar@halloverden.no"
-        },
-        {
-            "name": "Erich Json Fosse",
-            "email": "erich@halloverden.no"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {
-        "php":">=8.1",
-        "symfony/http-kernel": "^5.4|^6.1",
-        "symfony/dependency-injection": "^5.4|^6.1",
-        "halloverden/symfony-http-exceptions": "^1.0|^2.0",
-        "ext-json": "*",
-        "symfony/config": "^5.4|^6.1"
+  "name": "halloverden/symfony-http-exceptions-bundle",
+  "description": "Bundle for halloverden/symfony-http-exceptions",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tom Roar Furunes",
+      "email": "tom.roar@halloverden.no"
     },
-    "autoload": {
-        "psr-4": {
-            "HalloVerden\\HttpExceptionsBundle\\": ""
-        }
+    {
+      "name": "Erich Json Fosse",
+      "email": "erich@halloverden.no"
     }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "ext-json": "*",
+    "halloverden/symfony-http-exceptions": "^1.0|^2.0",
+    "php": ">=8.1",
+    "symfony/config": "^5.4|^6.4|^7.0",
+    "symfony/dependency-injection": "^5.4|^6.4|^7.0",
+    "symfony/http-kernel": "^5.4|^6.4|^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "HalloVerden\\HttpExceptionsBundle\\": ""
+    }
+  }
 }
